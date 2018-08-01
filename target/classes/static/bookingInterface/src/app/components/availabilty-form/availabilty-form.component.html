@@ -1,0 +1,22 @@
+<form class="padContent" [formGroup] = "dateForm">
+     <div class="padContent2">
+    <div class="row padContent2"> 
+        <div class="col-lg-12 col-lg-offset-0 col-md-12 col-md-offset-0">
+        
+        <div class ="row">
+                <div class="col-lg-12 col-md-12"><label>Enter Month</label>
+                <input class="form-control" type="month" name="month" [(ngModel)] ="month" [formControl]= "dateForm.controls.month" >
+         </div>
+         <div class="col-lg-12 col-md-12">
+                <br> 
+                            <button class="btn btn-default btn-block bookingButtons4" type="button" id="addMonth" [disabled] = "!dateForm.valid" (click) ="addMonth(month)">Add date <span class="glyphicon glyphicon-cloud-upload"></span></button>
+                        <br>
+                        <span *ngIf = "getStatement()"><app-time-sheet></app-time-sheet></span>
+                        </div>
+            </div>
+    </div>
+       
+    </div>
+    <br>
+</div>
+</form>

@@ -1,0 +1,28 @@
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <th>ID</th>
+      <th>First Name</th>
+      <th>Surname</th>
+      <th>Email</th>
+      <th>Phone Number</th>
+      <th>Password</th>
+      <th>oparations</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let users of user">
+          <td>{{users.id}}</td>
+          <td>{{users.name}}</td>
+          <td>{{users.surname}}</td>
+          <td>{{users.email}}</td>
+          <td>{{users.phoneNo}}</td>
+          <td>{{users.password}}</td>
+          <td>
+            <button class = "btn btn-danger btn-sm" (click)="deleteUser(users)">Delete</button></td>
+            <td><button class = "btn btn-primary btn-sm" (click) = "editUser(users)" >Edit <i class="fa fa-pencil-square-o"></i></button>
+          </td>
+        </tr>
+        </tbody>
+    </table>
+    <button class = "btn btn-primary btn-sm" (click) = "createUser()">new user</button>
+</div>

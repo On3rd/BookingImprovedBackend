@@ -1,0 +1,54 @@
+<div class="container">
+    <br>
+    <div class = "row padContent" id ="header">
+        <div class ="col-lg-2"> 
+            #ID
+          </div>
+      <div class ="col-lg-2"> 
+          Name
+        </div>
+        <div class ="col-lg-2">
+            Surname 
+          </div>
+          <div class ="col-lg-2">
+              Phone number
+            </div>
+            <div class ="col-lg-2"> 
+                Email
+              </div>
+              
+                <div class ="col-lg-2">
+                    Stuff Number
+                  </div>
+  
+      
+    </div>
+  
+    <div class = "row padContent" *ngFor ="let users of user">
+        <div class ="col-lg-2 header"> 
+            {{users.user_Id}}
+          </div>
+          <div class ="col-lg-2 header">
+             <a (click) ="viewUser(users.user_Id)">{{users.name}}</a>  
+            </div>
+            <div class ="col-lg-2 header">
+                {{users.surname}}
+              </div>
+              <div class ="col-lg-2 header"> 
+                  {{users.phoneNo}}
+                </div>
+                <div class ="col-lg-2 header"> 
+                    {{users.email}}
+                  </div>
+                  <div class ="col-lg-2 header">
+                    <div *ngIf = "users.stuffNo != null">
+                        {{users.stuffNo}}
+                    </div>
+                    <div *ngIf = "users.stuffNo == null">
+                        None.
+                    </div>
+                    </div>
+                  
+    </div>
+  
+  </div>

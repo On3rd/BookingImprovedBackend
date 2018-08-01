@@ -1,0 +1,52 @@
+<div class="container">
+  
+
+  <form action="" class="padContent2"  [formGroup] = "userContactForm">
+      <span class = "validate" *ngIf ="!userContactForm.controls.streetAddress.valid">
+          required.
+     </span>
+    <label for="">
+      Street Address:
+    </label>
+    <input class="form-control"  type="text" name="streetAddress" [formControl]= "userContactForm.controls.streetAddress" [(ngModel)] = "userContactDetails.streetAddress" >
+    <span class = "validate" *ngIf ="!userContactForm.controls.addressline2.valid">
+        required.
+   </span>
+    <label for="">
+      Addressline 2:
+    </label>
+    <input class="form-control"  type="text" name="addressline2" [formControl]= "userContactForm.controls.addressline2"  [(ngModel)] = "userContactDetails.addressline2" >
+    <span class = "validate" *ngIf ="!userContactForm.controls.city.valid">
+        required.
+   </span>
+    <label for="">
+      City:
+    </label>
+    <input class="form-control"  type="text" name="city" [formControl]= "userContactForm.controls.city"  [(ngModel)] = "userContactDetails.city" >
+    <span class = "validate" *ngIf ="!userContactForm.controls.province.valid">
+        required.
+   </span>
+    <label for="">
+      Province:
+    </label>
+    <input class="form-control"  type="text" name="province" [formControl]= "userContactForm.controls.province"  [(ngModel)] = "userContactDetails.province" >
+    <span class = "validate" *ngIf ="!userContactForm.controls.country.valid">
+        required.
+   </span>
+    <label for="">
+      Country:
+    </label>
+    <input class="form-control"  type="text" name="country" [formControl]= "userContactForm.controls.country"  [(ngModel)] = "userContactDetails.country" >
+    <span class = "validate" *ngIf ="!userContactForm.controls.postal_code.valid">
+        required.
+   </span>
+    <label for="">
+      Postal Code:
+    </label>
+    <input class="form-control"  type="text" name="postal_code" [formControl]= "userContactForm.controls.postal_code"  [(ngModel)] = "userContactDetails.postalCode" >
+   <br>
+    <button class="btn btn-default btn-block bookingButtons4" [disabled] = "!userContactForm.valid" data-dismiss="modal" type="submit" (click) ="processForm(userContactDetails.city,userContactDetails.streetAddress,userContactDetails.addressline2,userContactDetails.province,userContactDetails.country,userContactDetails.postalCode)">
+      Submit <span class="glyphicon glyphicon-cloud-upload"></span></button>
+      <app-view-additional-information></app-view-additional-information>
+  </form>
+</div>

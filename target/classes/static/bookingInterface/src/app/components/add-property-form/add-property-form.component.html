@@ -1,0 +1,159 @@
+
+<div class="container">
+        
+            <div class="col-lg-12 col-lg-offset-0 col-md-12 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0">
+               
+
+
+
+
+
+                <!--Inside Navigation For Forms-->
+                    
+                   <!--Inside Navigation For Forms-->
+
+
+
+               
+                    
+                       
+                        <div class="container ">
+                        
+                        <form [formGroup] = "addProperty">
+                          
+              <div class ="row padContent2 ">
+
+                            <div class="row ">
+                                    
+                                <div class="col-lg-12 col-md-12"><span>Property name</span>
+                                    <span class = "validate" *ngIf ="!addProperty.controls.prop_name.valid">
+                                            Property name required.
+                                       </span>
+                                    <input class="form-control" type="text" name="prop_name" [formControl]= "addProperty.controls.prop_name"  [(ngModel)] = "property.prop_name">
+                                </div>
+              
+                            
+              
+                            </div>
+              <br>
+                
+                            <div class="row">
+                                   
+                                <div class="col-lg-6 col-md-6"><span>Property type</span>
+                                    <span class = "validate" *ngIf ="!addProperty.controls.prop_type.valid">
+                                            required.
+                                       </span>
+                                    <select class="form-control" name="prop_type" [formControl]= "addProperty.controls.prop_type" [(ngModel)] = "property.prop_type">
+                                        <optgroup label="PropertyType">
+                                            <option value="Apartment">Apartment</option>
+                                            <option value="Hotel">Hotel</option>
+                                            <option value="Lodge">Lodge</option>
+                                            <option value="Holiday Home">Holiday Home</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+                                <div class="col-lg-6 col-md-6"><span>The number of rooms</span>
+                                    <span class = "validate" *ngIf ="!addProperty.controls.numberRoom.valid">
+                                            required.
+                                       </span>
+                                    <input class="form-control" type="text" name="numberRoom" [formControl]= "addProperty.controls.numberRoom" [(ngModel)] = "property.numberRoom" >
+                                </div>
+                            </div>
+              <div class="row">
+                                <div class="col-lg-12 col-md-12"><span>Price </span>
+                                    <span class = "validate" *ngIf ="!addProperty.controls.price.valid">
+                                            required.
+                                       </span>
+                                    <input class="form-control" type="text" name="price" [formControl]= "addProperty.controls.price" [(ngModel)] = "property.price" >
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12"><span>Property website (optional)</span>
+                                    <input class="form-control" type="text" name="website" [formControl]= "addProperty.controls.website" [(ngModel)] = "property.website">
+                                </div>
+                            </div>
+                        <div class="row"><span class = "validate" *ngIf ="!addProperty.controls.contact_name.valid">
+                                required.
+                           </span>
+                                <div class="col-lg-12 col-md-12"><span>Contact name</span>
+                                    
+                                    <input class="form-control" type="text" name="contact_name" [formControl]= "addProperty.controls.contact_name" [(ngModel)] = "property.contact_name" required="" placeholder="Who will recieve this letter">
+                                </div>
+                            </div>
+                            <div class="row">
+                                    <span class = "validate" *ngIf ="!addProperty.controls.streetAddress.valid">
+                                            required.
+                                       </span>
+                                <div class="col-lg-12 col-md-12"><span>Street address</span>
+                                    <input class="form-control" type="text" name="streetAddress" [formControl]= "addProperty.controls.streetAddress" [(ngModel)] = "property.streetAddress" required="" placeholder="e.g 123 Easy Street">
+                                </div>
+                            </div>
+                            <div class="row">
+                                    <span class = "validate" *ngIf ="!addProperty.controls.addressline2.valid">
+                                           required.
+                                       </span>
+                                <div class="col-lg-12 col-md-12"><span>Address line 2</span>
+                                    <input class="form-control" type="text" name="addressline2" [formControl]= "addProperty.controls.addressline2" [(ngModel)] = "property.addressline2"  placeholder="Unit number, suite or building etc.">
+                                </div>
+                            </div>
+                            <div class="row">
+                                    <span class = "validate" *ngIf ="!addProperty.controls.province.valid">
+                                            required.
+                                       </span>
+                                <div class="col-lg-12 col-md-12"><span>Province </span>
+                                    <input class="form-control" type="text" name="province" [formControl]= "addProperty.controls.province" [(ngModel)] = "property.province" placeholder="e.g Gauteng">
+                                </div>
+                            </div>
+                            <div class="row">
+                                    <span class = "validate" *ngIf ="!addProperty.controls.country.valid">
+                                            required.
+                                       </span>
+                                <div class="col-lg-12 col-md-12"><span>Country </span>
+                                    <input class="form-control" type="text" name="country" [formControl]= "addProperty.controls.country" [(ngModel)] = "property.country" placeholder="e.g South Africa">
+                                </div>
+                            </div>
+                            <div class="row">
+                                    <span class = "validate" *ngIf ="!addProperty.controls.city.valid">
+                                            required.
+                                       </span>
+                                <div class="col-lg-12 col-md-12"><span>City </span>
+                                    <input class="form-control" type="text" name="city" [formControl]= "addProperty.controls.city" [(ngModel)] = "property.city" placeholder="e.g Pretoria">
+                                </div>
+                            </div>
+                            <div class="row">
+                                    <span class = "validate" *ngIf ="!addProperty.controls.postal_code.valid">
+                                            required.
+                                       </span>
+                                <div class="col-lg-12 col-md-12"><span>Postal Code</span>
+                                    <input class="form-control" type="text" name="postal_code" [formControl]= "addProperty.controls.postal_code" [(ngModel)] = "property.postal_code" placeholder="e.g 0198">
+                                </div>
+                            </div>
+              <br>
+              </div>
+                        
+                        
+            
+                    <br>
+                        <div class="row padContent">
+                            <div class="col-lg-12 col-md-12 ">
+                                <button class="btn btn-default btn-block bookingButtons4" type="submit" [disabled] = "!addProperty.valid" (click) = "processForm(property.prop_name,
+                                property.prop_type,
+                                property.numberRoom,
+                                property.city,
+                                property.contact_name,
+                                property.addressline2,
+                                property.country,
+                                property.province,
+                                property.streetAddress,
+                                property.website,
+                                property.price,
+                                property.postal_code)">Add Property <span class="glyphicon glyphicon-cloud-upload"></span></button>
+                            </div>
+                        </div>
+                   
+                    </form>
+                </div>
+            </div>
+        
+      </div>
+      

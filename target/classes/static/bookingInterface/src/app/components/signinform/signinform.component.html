@@ -1,0 +1,54 @@
+<div class="form-group">
+    <button type="button" class="btn btn-sm btn-primary bookingButtons" data-toggle="modal" data-target="#singinform">
+    Sign in <i class="fa fa-sign-in"></i>
+  </button>
+            </div>
+         
+
+ 
+        <div class="modal fade right" id="singinform" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-sm modal-side modal-bottom-right" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+              
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                
+    
+    
+    <!--<div class="container">-->
+
+        <div class="modal-body">
+                    <h1 class="text-center login-title">Sign in</h1>
+                             
+                                  <img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
+                                      alt="">
+                                  <form class="form-signin" >
+                                  <input type="text" class="form-control" size = "35%" name="email" placeholder="Email" [(ngModel)]="email" required autofocus>
+                                  <input type="password" class="form-control " size = "35%" name ="password" placeholder="Password"  [(ngModel)] = "password" required>
+                                  <button class="btn btn-default btn-block bookingButtons4" data-dismiss="modal" type="submit" (click) = "login(email,password)">
+                                      Sign in <i class="fa fa-sign-in"></i></button>
+                                  <a class="text-center new-account" data-dismiss="modal" data-toggle="modal" data-target="#singupform">Create an account </a>
+                    
+                                  </form>
+                              
+                              <br>
+                       
+        </div>
+    
+    <!--</div>-->
+
+    
+    
+    
+    
+    
+    
+    
+    </div>
+    </div>
+    </div>
+   
+    

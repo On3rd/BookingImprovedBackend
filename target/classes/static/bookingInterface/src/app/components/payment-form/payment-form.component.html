@@ -1,0 +1,65 @@
+
+  
+    <form action="" class=" padContent2" [formGroup] = "bankDetails">
+      <img src="../../../assets/img/online.gif" width="100%" alt="">
+      <br>
+      <span class = "validate" *ngIf ="!bankDetails.controls.cardType.valid">
+        required.
+    </span>
+      <label for="">
+        Card type:
+      </label>
+      <select class="form-control" name="cardType" [formControl] = "bankDetails.controls.cardType" [(ngModel)] = "userPaymentMethod.card_type">
+        
+            <option value="ATM">ATM</option>
+            <option value="Debit">Debit</option>
+            <option value="Credit">Credit</option>
+        
+          </select>
+          <span class = "validate" *ngIf ="!bankDetails.controls.card_number.valid">
+            required.
+        </span>
+          <label for="">
+            Card Number:
+          </label>
+          <input class="form-control"  type="text" name="card_number" [formControl] = "bankDetails.controls.card_number"  [(ngModel)] = "userPaymentMethod.card_number" >
+          <span class = "validate" *ngIf ="!bankDetails.controls.Expiry_Date.valid">
+            required.
+        </span>
+          <label for="">
+            Expiry Date:
+          </label>
+          <input class="form-control" type="month" name="Expiry_Date" [formControl] = "bankDetails.controls.Expiry_Date"  [(ngModel)] = "expiry_date" >
+          <span class = "validate" *ngIf ="!bankDetails.controls.Security_Code.valid">
+            required.
+        </span>
+          <label for="">
+            Security Code:
+          </label>
+          <input class="form-control"  type="password" name="Security_Code" [formControl] = "bankDetails.controls.Security_Code"  [(ngModel)] = "userPaymentMethod.security_code" >
+          <div class="row padContent">
+            <div class="col-lg-2">
+              <label for="">
+                Remember
+              </label>
+             <label class="switch btn-sm" >
+                <input type="checkbox" name ="remember" [(ngModel)]="remember" >
+                 <span class="slider round"></span>
+              </label>
+              
+            </div>
+          </div><br>
+          <div *ngIf = "remember == true">
+              <button class="btn btn-default btn-block bookingButtons5" [disabled] ="!bankDetails.valid"data-dismiss="modal" type="submit" (click) ="processForm(remember,userPaymentMethod.card_type,userPaymentMethod.card_number,expiry_date,userPaymentMethod.security_code)">
+                  Submit <span class="glyphicon glyphicon-cloud-upload"></span></button>
+             
+          </div>
+         <div *ngIf = "remember == false || remember == null">
+            <button class="btn btn-default btn-block bookingButtons4" [disabled] ="!bankDetails.valid" data-dismiss="modal" type="submit" (click) ="processForms(userPaymentMethod.card_type,userPaymentMethod.card_number,expiry_date,userPaymentMethod.security_code)">
+                Submit <span class="glyphicon glyphicon-cloud-upload"></span></button>
+           
+         </div>
+          
+    </form>
+  
+ 

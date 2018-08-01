@@ -1,0 +1,745 @@
+.breadcrumb{
+  color:black;
+  text-align:center;
+  background-color:transparent;
+  border-bottom:1px solid #eee;
+  padding-top:12px;
+  padding-bottom:12px;
+  margin-bottom:40px;
+}
+
+nav.navbar.navbar-default{
+  margin-bottom:0px;
+}
+
+@media (min-width:992px) {
+  .product h2{
+    margin-top:0;
+    color:white;
+  }
+}
+.manageBooking
+{
+  background-image:url("../img/Johannesburg.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+div#dates
+{
+  border-style: solid;
+  border-color: rgb(209, 209, 209);
+  border-width: 1px;
+  background-color:rgb(245, 245, 245);
+}
+div#startUp:hover
+{
+  border-style:solid;
+  border-width: 1px;
+  box-shadow: inset 0px 10px 100px 10px rgb(0, 0, 0);
+  opacity: 0.9;
+    filter: alpha(opacity=100); 
+    transition-delay:1s ease-out;
+}
+div#startUp
+{
+  background-image:url("../../assets/img/StartUpBackground.jpg");
+  background-size: 100% 100%;
+  background-repeat: repeat;
+  opacity: 1;
+
+}
+
+.navbar .navbar-brand{
+  font-size:24px;
+  line-height:18px;
+}
+
+.reviewer-name{
+  margin-right:10px;
+}
+
+.site-footer{
+  padding:20px 0;
+  text-align:center;
+}
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: rgb(10, 54, 145);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px rgb(10, 54, 145);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+@media (min-width:768px) {
+  .site-footer h5{
+    text-align:left;
+  }
+}
+span.validate{
+  color:red;
+  font-size: 14px;
+  background-color: antiquewhite;
+  border-color: red;
+  border-width: 1px;
+  border-radius: 5px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  margin-top: 10px;
+  display:block;
+  width:100%;
+  height:1%;
+  padding:8px 12px;
+}
+span.validate2{
+  color:red;
+  font-size: 14px;
+  border-color: red;
+  background-color: rgba(250, 235, 215, 0.4);
+  border-width: 1px;
+  border-radius: 5px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  margin-bottom: 10px;
+  display:block;
+  width:100%;
+  height:1%;
+  padding:8px 12px;
+}
+.site-footer h5{
+  color:inherit;
+  font-size:16px;
+}
+
+.site-footer .social-icons a:hover{
+  opacity:1;
+}
+
+.site-footer .social-icons a{
+  display:inline-block;
+  width:32px;
+  border:none;
+  font-size:20px;
+  border-radius:50%;
+  margin:4px;
+  color:#fff;
+  text-align:center;
+  background-color:#798FA5;
+  height:32px;
+  opacity:0.8;
+  line-height:32px;
+}
+
+@media (min-width:768px) {
+  .site-footer .social-icons{
+    text-align:right;
+  }
+}
+
+.btn.write-review{
+  float:right;
+  margin-top:-6px;
+}
+
+div#cape-town.col-md-7{
+  background-image:url("../../assets/img/suit_jacket.jpg");
+}
+
+@media (max-width:767px) {
+  div#cape-town{
+    background-size:contain;
+    background-repeat:no-repeat;
+  }
+}
+
+div#Cape\ Town{
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-image: linear-gradient(to bottom, transparent, rgba(0, 121, 219, 0.185)),url("../../assets/img/Cape\ Town.jpg") ;
+  
+}
+
+
+
+h1#AverageHeader.text-nowrap.text-right{
+  color:white;
+}
+
+#provinceHeader{
+  color:white;
+  font-family: "Arial Black", Gadget, sans-serif;
+}
+.padContent{
+  margin-top:1%;
+  margin-left: 0%;
+  margin-bottom: 1%;
+}
+.padContent5
+{
+ margin:4px;
+ 
+ padding-bottom: 5%;
+}
+
+.padContent4
+{
+  padding-left: 1%;
+  padding-right: 1%;
+  padding-top:1%;
+  padding-bottom: 2%;
+  margin-top:1%;
+  margin-right: 1%;
+  margin-left: 1%;
+  margin-bottom: 0%;
+}
+
+.padContent3
+{
+  padding-left: 1%;
+  padding-right: 1%;
+	padding-top:1%;
+  margin-top:1%;
+  margin-right: 1%;
+  margin-left: 1%;
+  margin-bottom: 0%;
+
+}
+.padContent2{
+  padding-left: 1%;
+  padding-right: 1%;
+	padding-top:1%;
+  margin-top:1%;
+  margin-left: 0%;
+  margin-bottom: 0%;
+}
+.buttonlink
+{
+	color:white;
+	
+	
+}
+.buttonlink:hover
+{
+	color:white;
+	background-color:rgba(0, 121, 219, 0.185);
+
+	
+}
+.buttonlink.active
+{
+	color:white;
+	background-color:rgba(0, 120, 219, 0.4);
+  border-style: none;
+  border-width: 0%;
+	
+}
+div.hidden{
+  display:none;
+}
+.navList
+{
+	list-style-type: none;
+	
+}
+a#brand-image.navbar-brand.navbar-link{
+  background-image:url("../../assets/img/Booking.com.png");
+  background-size:cover;
+  background-repeat:no-repeat;
+}
+
+img#brandImage{
+  margin-top:auto;
+  margin-right:auto;
+}
+
+@media (min-width:768px) {
+  .navbar-toggle{
+    display:none;
+  }
+}
+
+body#indexBody{
+  background-color:red;
+}
+
+
+nav#indexNavBar.navbar.navbar-default{
+  border: none;
+  background-color:	#03347D;
+  color:white;
+}
+
+ul#navItems.nav.navbar-nav.nav-default{
+  color:white;
+}
+
+li#indexDropDown.dropdown{
+  color:white;
+}
+a.btn.btn-primary.navbar-btn.transButton2{
+  background-color:transparent;
+  border-color:transparent;
+  border-width:thin;
+}
+a.btn.btn-primary.navbar-btn.transButton2:hover{
+  background-color:transparent;
+  border-color:transparent;
+  border-width:thin;
+  color:white;
+
+}
+button#listButton.btn.btn-primary.navbar-btn.transButton2{
+  background-color:transparent;
+  border-color:transparent;
+  border-width:thin;
+}
+button#listButton.btn.btn-primary.navbar-btn.transButton2:hover{
+  background-color:transparent;
+  border-color:transparent;
+  border-width:thin;
+  color:white;
+
+}
+
+a#listButton.btn.btn-primary.navbar-btn.transButton{
+  background-color:transparent;
+  border-color:white;
+  border-width:thin;
+}
+a#listButton.btn.btn-primary.navbar-btn.transButton:hover{
+  background-color:white;
+  border-color:white;
+  border-width:thin;
+ 
+}
+
+ol#indexBreadCrumb.breadcrumb{
+  background-color:t;
+}
+
+a{
+  font-family:arial;
+  font-size:medium;
+  color:rgb(6,5,5);
+  text-decoration:none;
+}
+
+a:hover, a:focus{
+  font-family:arial;
+  font-size:auto;
+  color:rgb(88,204,254);
+  text-decoration-color:rgb(88,204,254); 
+  text-decoration:underline;
+}
+
+
+form#searchForm.form-horizontal{
+  background-color:#FDBC01;
+}
+
+form#searchForm.form-horizontal.img-rounded{
+  border-radius:5px;
+}
+
+div#checkInAndOut.table-responsive{
+  border:none;
+}
+
+
+
+button#pageButton.btn.btn-primary{
+  background-color:rgb(47,131,170);
+}
+
+#dispDiv:hover{
+  background-color:rgb(235, 242, 247);
+  border-style: solid;
+  border-color: 	#03347D;
+  border-width: 1px;
+
+}
+#dispDiv{
+  border-left: #555;
+  border-bottom: #555;
+  border-right: #555;
+  border-top: #555;
+  border-style: solid;
+  border-color: rgb(209, 209, 209);
+  border-width: 1px;
+  background-color:rgb(245, 245, 245);
+  color:black;
+}
+p#averageDisplay.lead.text-right{
+  color:white;
+}
+.profile-img2{
+	
+	height:15%;
+	width: 15%;
+	border-radius: 15px;
+	border-width:1px;
+	border-style:solid;
+	border-color:grey;
+	
+}
+p#noOfProperties{
+  color:white;
+  
+}
+.averagePrices2{
+	width: 25%;
+	height:100%;
+	background-image:url("../../assets/img/tags.png");
+	background-repeat:no-repeat;
+	background-size:80% 65%;
+	background-position: right;
+	 
+	
+}
+.display:hover{
+  border-style:solid;
+  border-width: 1px;
+  border-color: #FDBC01;
+  box-shadow: inset 0px 10px 100px 10px rgb(0, 0, 0);
+  opacity: 1.0;
+    filter: alpha(opacity=100); 
+}
+
+.averagePrices{
+	width:30%;
+	height:100%;
+	background-image:url("../../assets/img/tags.png");
+	background-repeat:no-repeat;
+	background-size:100% 100%;
+	background-position: right;
+	 
+	
+}
+
+br.space {
+   display: block;
+   margin: 10px 0;
+   line-height:55px;
+
+}
+br.space2 {
+   display: block;
+   margin: 10px 0;
+   line-height:100px;
+
+}
+select.form-control.Search{width:100%;}
+option{width:170px;}
+
+p#averageDisplayDbn.lead.text-right{
+  color:white;
+}
+
+.averagePrice2{
+	color:white;
+	font-family:arial;
+	font-size:14px;
+}
+.averagePrice{
+	color:white;
+	font-family:arial;
+	font-size:12px;
+}
+
+p.noOfProperties{
+  color:white;
+  text-shadow:2px 1px black;
+}
+
+
+
+p.lead.text-right{
+  color:white;
+}
+
+p.lead.text-right{
+  color:white;
+}
+
+div#Durban{
+  background-image: linear-gradient(to bottom, transparent, rgba(0, 121, 219, 0.185)),url("../../assets/img/Durban.jpg");
+  background-repeat:no-repeat;
+  background-size:cover;
+}
+
+button.btn.btn-default.btn-sm.dropdown-toggle.formdrop{
+  border-width:medium;
+  border-color:rgb(249,251,252);
+  background-color:transparent;
+}
+
+div#santon
+{
+	background-size:cover;
+  background-repeat:no-repeat;
+  background-image: linear-gradient(to bottom, transparent, rgba(0, 121, 219, 0.185)),url("../../assets/img/Santon.jpg");
+}
+
+div#pretoria{
+	background-size:cover;
+  background-repeat:no-repeat;
+  background-image: linear-gradient(to bottom, transparent, rgba(0, 121, 219, 0.185)),url("../../assets/img/Pretoria.jpg");
+}
+
+div#Johannesburg{
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-image: linear-gradient(to bottom, transparent, rgba(0, 121, 219, 0.185)),url("../../assets/img/Johannesburg.jpg");
+}
+
+.aveDisplay{
+  font-size:medium;
+  color:white;
+}
+
+.bookingButtons2{
+  border-width:1px;
+  font-family:arial;
+ 
+  border-color:transparent;
+  background-color:grey;
+}
+.bookingButtons2:hover{
+  border-width:1px;
+  font-family:arial;
+  border-color:transparent;
+  background-color:white;
+  color:black;
+}
+.bookingButtons{
+  border-width:1px;
+  font-family:arial;
+  font-weight:Bold;
+  border-color:transparent;
+  background-color:rgb(47,131,170);
+}
+.bookingButtons5{
+  border-width:1px;
+  font-family:arial;
+  font-weight:Bold;
+  color:	#03347D;
+  border-style:solid;
+  border-width: 2px;
+  border-color:	#03347D;
+  background-color:transparent;
+}
+.bookingButtons5:hover{
+  border-width:1px;
+  font-family:arial;
+  font-weight:Bold;
+  color:white;
+  border-style:inset;
+  border-width: 2px;
+  border-color:transparent;
+  background-color:	#03347D;
+}
+.bookingButtons4{
+  border-width:1px;
+  font-family:arial;
+  font-weight:Bold;
+  border-color:transparent;
+  background-color:	#03347D;
+}
+button.btn.btn-default.bookingButtons4:hover{
+  border-width:1px;
+  font-family:arial;
+  font-weight:Bold;
+  border-color:white;
+  color:black;
+  background-color:white;
+
+  
+}
+.bookingButtons3{
+  border-width:1px;
+  font-family:arial;
+  
+  border-color:transparent;
+  background-color:rgb(47,131,170);
+}
+.bookingButtons3:hover{
+  border-width:1px;
+  font-family:arial;
+  border-color:transparent;
+  background-color:white;
+  color:black;
+}
+.bookingButtons:hover{
+  border-width:1px;
+  font-family:arial;
+  border-color:transparent;
+  background-color:white;
+  color:black;
+}
+
+a#bookingBrand.navbar-brand.navbar-link.bookingButtons{
+  background-color:transparent;
+}
+
+a.hover a.focus{
+  color:black;
+}
+
+a.dropdown-toggle.navbar-default.navbar-nav.a{
+  color:white;
+  background-color:transparent;
+}
+
+a.dropdown-toggle.navbar-default.navbar-nav.a:hover{
+  border-color:white;
+  color:white;
+  background-color:rgb(88,204,254);
+}
+
+form.formDisplay{
+
+    background-color: white;
+    border-left-color: 	#03347D;
+    border-right-color: 	#03347D;
+    border-top-color: 	#03347D;
+   
+    
+    border-bottom: 0px;
+    
+    border-style:solid;
+  
+
+}
+
+.form-signin
+{
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+.form-signin .form-signin-heading, .form-signin .checkbox
+{
+    margin-bottom: 10px;
+}
+.form-signin .checkbox
+{
+    font-weight: normal;
+}
+.dropdown-content {
+   float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.form-signin .form-control
+{
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.form-signin .form-control:focus
+{
+    z-index: 2;
+}
+.form-signin input[type="text"]
+{
+    margin-bottom: -1px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.form-signin input[type="password"]
+{
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.account-wall
+{
+    margin-top: 20px;
+    padding: 40px 0px 20px 0px;
+    background-color: #f7f7f7;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+.login-title
+{
+    color: #555;
+    font-size: 18px;
+    font-weight: 400;
+    display: block;
+}
+.profile-img
+{
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+.need-help
+{
+    margin-top: 10px;
+}
+.new-account
+{
+    display: block;
+    margin-top: 10px;
+}

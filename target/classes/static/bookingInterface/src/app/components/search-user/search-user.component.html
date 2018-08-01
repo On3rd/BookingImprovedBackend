@@ -1,0 +1,195 @@
+<nav class="navbar navbar-default" id="indexNavBar">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand navbar-link bookingButtons" (click) ="home()" id="bookingBrand"> <img src="assets/img/Booking.com.png" alt="Booking.com" width="70%" id="brandImage"></a>
+            <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1" id="toggleMenu"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+        </div>
+  
+  
+  
+        <div class="collapse navbar-collapse" id="navcol-1">
+            
+    
+        <ul class="nav navbar-nav navbar-right " id="navItems" >
+     <form class="form-inline">
+      <div class="row">
+      <div class="col-lg-offset-0 col-md-offset-0 col-sm-offset-0  col-xs-offset-1 ">
+  
+  
+ 
+    <!--Manage Mode Property Button here-->
+  <span>
+        <app-manager-mode></app-manager-mode>
+           </span>
+    
+  
+    <!--List Property Button-->
+    <span >
+  
+        <app-listpropertybutton></app-listpropertybutton>
+  
+     </span>
+  
+    <!--Sign In Button-->
+    
+    <!--Sign Up Button-->
+        
+    
+  
+    <!--Logged In Button-->
+        <span *ngIf="1==1">
+          
+            <div class="form-group">
+         
+    
+                <li class="dropdown">
+               <a class="nav-link dropdown-toggle transButton2 bookingButtons3 btn btn-primary navbar-btn"  type="button" id="dropdownMenuButton" href="#" id="dropdownThemes" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <div align ="left" ><img   class="profile-img2" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
+                         alt=""> <span>{{username}}</span> </div></a>
+               <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
+                
+                <div class="dropdown-content">
+               <a class="dropdown-item" (click) = " ManageBooking()">Manage Bookings <span class="glyphicon glyphicon-calendar"></span></a>
+               <br>
+              <a class="dropdown-item" (click) = "viewProfile()">View Profile <span class="glyphicon glyphicon-folder-open"></span></a>
+              <br>
+              <a class="dropdown-item" (click) = "EditProfile()">Edit Profile <i class="fa fa-pencil-square-o"></i></a>
+              <br>
+              
+               <div class="dropdown-divider">
+                 
+                </div>
+                <hr>
+               <a class="dropdown-item" (click) = "logout()">Sign Out <i class="fa fa-sign-out"></i></a>
+               </div>
+              </div>
+            
+               </li>
+              </div>
+        </span>
+  
+      </div>
+     </div>
+     
+     </form>
+    
+   
+    </ul>
+        </div>
+  
+  <div class ="col-lg-12 col-xs-12 ">
+  
+      <ul class ="navList list-inline">
+    
+                         <li><a class="btn tn-primary buttonlink active"> Accommodation</a> </li>
+                        
+                        <li><a class="btn tn-primary buttonlink" href ="https://booking.kayak.com/?sid=ce5984b8c33012f919bc10ec7552f201"> Flights</a> </li>
+                      <li><a class="btn tn-primary buttonlink" href ="http://www.rentalcars.com/Home.do?affiliateCode=booking-com&adplat=footer&preflang=en"> Rent A Car</a> </li>
+                        
+                        <li><a class="btn tn-primary buttonlink" href ="https://booking.rideways.com/?utm_source=booking.com&utm_medium=intra&lang=en-gb&currency=ZAR&sid=ce5984b8c33012f919bc10ec7552f201&utm_campaign=cross_product_bar_2&token=DkSw8pjaQEVKjr-s7bgmbGa-6owBCYEu9utvYK1aai0xNTI1NzAxOTMx"> Rent A Airport Taxi</a> </li>
+                       <li>
+                           </li>
+                    </ul>
+  
+  </div>
+  
+    </div>
+  </nav>
+
+  <div class="container">
+      
+    <form action="" class="padContent2">
+        <div class="row">
+            <div class="col-lg-4 ">
+                <img src="../../../assets/img/User.png" width= "50%" alt="" class ="radiusy">
+          
+            </div>
+           </div>
+           <br>
+      <div class="row padContent" >
+        <div class="col-lg-12" >
+           
+          <div class ="row">
+            
+            <div class="col-lg-3">
+                <span class = "form-control">
+                    First Name: {{user.name |titlecase}}
+                  </span>
+                  <span class = "form-control">
+                      Surname:  {{user.surname |titlecase}}
+                    </span>
+      
+                  <span class = "form-control">
+                    Email:  {{user.email}}
+                  </span>
+                  <span class = "form-control">
+                      Phone No:  {{user.phoneNo}}
+                    </span>
+                    
+            </div>
+              <div class="col-lg-5" *ngFor ="let userDatails of userContactDetails">
+                <div *ngIf = "userDatails.user_Id == UID">
+                    <span class = "form-control">
+                        Street Address: {{userDatails.streetAddress |titlecase}}
+                      </span>
+                      <span class = "form-control">
+                          Address Line 2: {{userDatails.addressline2 |titlecase}}
+                        </span>
+                        <span class = "form-control">
+                            City: {{userDatails.city |titlecase}}
+                          </span>
+                          <span class = "form-control">
+                              Province: {{userDatails.province |titlecase}}
+                            </span>
+                            <span class = "form-control">
+                                Country: {{userDatails.country |titlecase}}
+                              </span>
+                              <span class = "form-control">
+                                  Postal Code: {{userDatails.postalCode }}
+                                </span>
+                </div>
+                  
+    
+              </div>
+                 
+                            <div class="col-lg-4" *ngFor ="let userPaymentMethod of userPaymentMethods">
+                              <div *ngIf = "userPaymentMethod.user_Id == UID && CurrentUID == userPaymentMethod.user_Id">
+                                  <span class = "form-control">
+                                      Card Type: {{userPaymentMethod.card_type}}
+                                    </span>
+                                    <span class = "form-control">
+                                        Card Number: {{userPaymentMethod.card_number }}
+                                      </span>
+                                      <span class = "form-control">
+                                          Expiry Date: {{userPaymentMethod.expiry_date | date :  "MM/yy"}}
+                                        </span>
+                              </div>
+                          
+                                    
+                            </div>
+                             
+                                   
+                               
+                   
+          </div>
+        </div>
+      </div>
+       
+      <br>
+      <div class="container">
+          <div class="row ">
+              <div class="col-lg-2">
+                  <button class="btn btn-default btn-block bookingButtons4"  type="submit" (click) ="exit()">
+                      Exit</button>
+                 
+              </div>
+              
+            </div>
+      </div>
+      
+        
+
+    </form>
+    
+  </div>
+
+  <app-footer></app-footer>

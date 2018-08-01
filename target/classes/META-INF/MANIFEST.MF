@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: MyBookingApp
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: User
+Implementation-Vendor-Id: com.booking.application
+Build-Jdk: 1.8.0_161
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/MyBookingApp
+Created-By: Maven Integration for Eclipse
+

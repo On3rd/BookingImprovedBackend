@@ -1,0 +1,28 @@
+div#header
+{
+    background-color: white;
+    
+    border-bottom: 0px;
+
+    border-style:solid;
+    color: rgb(10, 54, 145);
+}
+div.header
+{
+   border: 1px;
+    border-bottom: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    border-style:solid;
+   
+}
+div.header:hover
+{
+    color: black;
+   border: 1px;
+    border-bottom: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    border-style:solid;
+   
+}

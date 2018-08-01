@@ -1,0 +1,48 @@
+<div class="container">
+
+  
+  <form action="" class=" padContent2" [formGroup] = "bankDetails">
+      <span class = "validate" *ngIf ="!bankDetails.controls.cardType.valid">
+          required.
+      </span>
+    <label for="">
+      Card type:
+    </label>
+    <select class="form-control" name="cardType" [formControl] = "bankDetails.controls.cardType" [(ngModel)] = "userPaymentMethod.card_type">
+     
+          <option value="ATM">ATM</option>
+          <option value="Debit">Debit</option>
+          <option value="Credit">Credit</option>
+      
+        </select>
+        <span class = "validate" *ngIf ="!bankDetails.controls.card_number.valid">
+           required.
+       </span>
+        <label for="">
+          Card Number:
+        </label>
+        <input class="form-control"  type="text" name="card_number" [formControl] = "bankDetails.controls.card_number" [(ngModel)] = "userPaymentMethod.card_number" >
+        
+        <span class = "validate" *ngIf ="!bankDetails.controls.Expiry_Date.valid">
+            required.
+        </span>
+        <label for="">
+          Expiry Date:
+        </label>
+        <input class="form-control" type="month" name="Expiry_Date" [formControl] = "bankDetails.controls.Expiry_Date"  [(ngModel)] = "expiry_date" >
+        
+        <span class = "validate" *ngIf ="!bankDetails.controls.Security_Code.valid">
+            required.
+        </span>
+        <label for="">
+          Security Code:
+        </label>
+        <input class="form-control"  type="password" name="Security_Code" [formControl] = "bankDetails.controls.Security_Code"  [(ngModel)] = "userPaymentMethod.security_code" >
+       <br>
+        <button class="btn btn-default btn-block bookingButtons4" [disabled] = "!bankDetails.valid" data-dismiss="modal" type="submit" (click) ="processForm(userPaymentMethod.card_type,userPaymentMethod.card_number,expiry_date,userPaymentMethod.security_code)">
+          Submit <span class="glyphicon glyphicon-cloud-upload"></span></button>
+          <app-view-bank-details></app-view-bank-details>
+  </form>
+
+</div>
+

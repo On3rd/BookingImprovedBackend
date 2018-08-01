@@ -1,0 +1,122 @@
+<div class="col-lg-12 col-lg-offset-0 col-md-12 col-md-offset-0 col-sm-12 col-sm-offset-0  col-xs-10 col-xs-offset-1">
+   
+    <form class="form-horizontal padContent" method="post" id="searchForm" [formGroup] = "searchForm">
+        
+            <div class="row">
+                <div class="col-lg-12 col-lg-offset-1 col-md-12 col-md-offset-1 col-sm-12 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+                    <h3 id="indexSearchForm">Find deals for any season</h3>
+                    <p>From cosy country homes to funcky city flats</p>
+                </div>
+            </div>
+            <div class="row">
+                    
+                <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"><span>Destination, property name or address: </span>
+                     <input class="form-control" type="text" name="txt_destination" [formControl]= "searchForm.controls.txt_destination" placeholder="More places than you could ever go (but you can try!)" [(ngModel)] ="destination"
+                     [ngbTypeahead]="Search"
+                     (focus)="focus$.next($event.target.value)"
+  (click)="click$.next($event.target.value)"
+  #instance="ngbTypeahead" 
+  >
+                    
+                     <span class = "validate2" *ngIf ="!searchForm.controls.txt_destination.valid">
+                            required.
+                       </span>
+                  
+                    </div>
+            </div>
+<br>
+            <div class="row">
+
+                <div class="col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-5 col-xs-offset-1"><i class="fa fa-calendar-check-o"></i><span>Check-In:</span>
+                    <input class="form-control" type="date" min="2018-04-30" max ="2018-12-31" name="txt_checkInDate" >
+                </div>
+                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5"><i class="fa fa-calendar-times-o"></i><span>Check-Out:</span>
+                    <input class="form-control" type="date" min="2018-04-30" max ="2019-12-31" name="txt_checkOutDate"  >
+                </div>
+            </div>
+<br>
+<div class="row" >
+  <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+                <div class="col-lg-4 col-lg-offset-0 col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-4 col-xs-offset-0">
+                       
+                    <div >
+    <span>Adults:</span>
+                        <select class="form-control Search" name ="Adults"[(ngModel)] = "adults" [formControl]= "searchForm.controls.Adults">
+                            
+                                    <option value="0" disabled selected>No Adult</option>
+                                    <option value="1">1 Adult</option>
+                                    <option value="2">2 Adults</option>
+                                    <option value="3">3 Adults</option>
+                                    <option value="4">4 Adults</option>
+                                    <option value="5">5 Adults</option>
+                                    <option value="6">6 Adults</option>
+                                    <option value="7">7 Adults</option>
+                                    <option value="8">8 Adults</option>
+                           
+                        </select>
+                    </div>
+                    <span class = "validate2" *ngIf ="!searchForm.controls.Adults.valid">
+                            required.
+                       </span>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                       
+                    <div >
+
+    <span>Children:</span>
+                        <select class="form-control Search" name = "Children"[(ngModel)] = "children" [formControl]= "searchForm.controls.Children">
+                            
+                                    <option value="0" disabled selected>No Child</option>
+                                    <option value="1">1 Child</option>
+                                    <option value="2">2 Chlidren</option>
+                                    <option value="3">3 Children</option>
+                                    <option value="4">4 Children</option>
+                                    <option value="5">5 Children</option>
+                                    <option value="6">6 Children</option>
+                                    <option value="7">7 Chlidren</option>
+                                    <option value="8">8 Children</option>
+                                    <option value="9">9 Children</option>
+                            
+                        </select>
+                    </div>
+                    <span class = "validate2" *ngIf ="!searchForm.controls.Children.valid">
+                            required.
+                       </span>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                        
+                    <div >
+    <span>Rooms:</span>
+                       <select class="form-control Search" name = "Rooms" [(ngModel)] = "rooms"  [formControl]= "searchForm.controls.Rooms">
+                            
+                                    <option value="1">1 Room</option>
+                                    <option value="2">2 Rooms</option>
+                                    <option value="3">3 Rooms</option>
+                                    <option value="4">4 Rooms</option>
+                                    <option value="5">5 Room</option>
+                                    <option value="6">6 Rooms</option>
+                                    <option value="7">7 Rooms</option>
+                                    <option value="8">8 Rooms</option>
+                                    <option value="9">9 Rooms</option>
+                                    <option value="10">10 Rooms</option>
+                            
+                        </select>
+                    </div>
+                    <span class = "validate2" *ngIf ="!searchForm.controls.Rooms.valid">
+                            required.
+                       </span>
+                </div>
+  </div>
+            </div>
+<br>
+
+            <div class="row" >
+             <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-4 col-xs-offset-4" >
+                    <button class="btn btn-default btn-md btn-block bookingButtons4" type="submit" id="searchButton" [disabled] = "!searchForm.valid" (click) ="search(destination,adults,children,rooms)" >Search <span class="glyphicon glyphicon-search"></span></button>
+                </div>
+            </div>
+        
+        <br>
+    </form>
+
+</div>

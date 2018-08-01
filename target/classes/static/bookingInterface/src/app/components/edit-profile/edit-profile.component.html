@@ -1,0 +1,242 @@
+<nav class="navbar navbar-default" id="indexNavBar">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand navbar-link bookingButtons" (click)="home()" id="bookingBrand"> <img src="assets/img/Booking.com.png" alt="Booking.com" width="70%" id="brandImage"></a>
+            <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1" id="toggleMenu"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+        </div>
+  
+  
+  
+        <div class="collapse navbar-collapse" id="navcol-1">
+            
+    
+        <ul class="nav navbar-nav navbar-right " id="navItems" >
+     <form class="form-inline">
+      <div class="row">
+      <div class="col-lg-offset-0 col-md-offset-0 col-sm-offset-0  col-xs-offset-1 ">
+  
+  
+  
+  <!--Manage Property Button here-->
+    <span >
+        
+              <app-manage-property></app-manage-property>
+            
+            </span>
+  
+  
+    <!--List Property Button-->
+    <span >
+  
+        <app-listpropertybutton></app-listpropertybutton>
+  
+     </span>
+  
+    <!--Manage Mode Property Button here-->
+    <span>
+          <app-manager-mode></app-manager-mode>
+             </span>
+  
+    <!--Sign In Button-->
+    <span *ngIf="1==0" >
+      <app-signinform></app-signinform>
+     
+    </span>
+    <!--Sign Up Button-->
+        <span *ngIf="1==0">
+        <app-signupform></app-signupform>
+      
+        </span>
+    
+  
+    <!--Logged In Button-->
+        <span *ngIf="1==1">
+          
+  <div class="form-group">
+         
+    
+    <li class="dropdown">
+   <a class="nav-link dropdown-toggle transButton2 bookingButtons3 btn btn-primary navbar-btn"  type="button" id="dropdownMenuButton" href="#" id="dropdownThemes" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <div align ="left" ><img   class="profile-img2" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
+             alt=""> <span>{{username}}</span> </div></a>
+   <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
+    
+    <div class="dropdown-content">
+   <a class="dropdown-item" (click) = "manageBooking()">Manage Bookings <span class="glyphicon glyphicon-calendar"></span></a>
+   <br>
+  <a class="dropdown-item" (click) = "viewProfile()">View Profile <span class="glyphicon glyphicon-folder-open"></span></a>
+  <br>
+  
+   <div class="dropdown-divider">
+     
+    </div>
+    <hr>
+   <a class="dropdown-item" (click) = "logout()">Sign Out <i class="fa fa-sign-out"></i></a>
+   </div>
+  </div>
+
+   </li>
+  </div>
+        </span>
+        
+  
+      </div>
+     </div>
+     
+     </form>
+    
+   
+    </ul>
+        </div>
+  
+  <div class ="col-lg-12 col-xs-12 ">
+  
+      <ul class ="navList list-inline">
+    
+                         <li><a class="btn tn-primary buttonlink active"> Accommodation</a> </li>
+                        
+                        <li><a class="btn tn-primary buttonlink" href ="https://booking.kayak.com/?sid=ce5984b8c33012f919bc10ec7552f201"> Flights</a> </li>
+                      <li><a class="btn tn-primary buttonlink" href ="http://www.rentalcars.com/Home.do?affiliateCode=booking-com&adplat=footer&preflang=en"> Rent A Car</a> </li>
+                        
+                        <li><a class="btn tn-primary buttonlink" href ="https://booking.rideways.com/?utm_source=booking.com&utm_medium=intra&lang=en-gb&currency=ZAR&sid=ce5984b8c33012f919bc10ec7552f201&utm_campaign=cross_product_bar_2&token=DkSw8pjaQEVKjr-s7bgmbGa-6owBCYEu9utvYK1aai0xNTI1NzAxOTMx"> Rent A Airport Taxi</a> </li>
+                       
+                    </ul>
+  
+  </div>
+  
+    </div>
+  </nav>
+
+
+  <div class="container">
+      <h1>Welcome, <span id="user"> {{username}} </span></h1>
+      <p>Fill in the form below to edit your profile.</p>
+  
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="EditProfile-tab" data-toggle="tab" href="#EditProfile" role="tab" aria-controls="EditProfile" aria-selected="true">Basic Information</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Additional Information</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" id="PaymentMethod-tab" data-toggle="tab" href="#PaymentMethod" role="tab" aria-controls="PaymentMethod" aria-selected="false">Payment Method</a>
+  </li>
+  
+</ul>
+
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade" id="EditProfile" role="tabpanel" aria-labelledby="EditProfile-tab">
+      
+          <form class = "padContent2" [formGroup] = "editProfileForm">
+              <span class = "validate" *ngIf ="!editProfileForm.controls.name.valid">
+                  required.
+                  </span>  
+            <label for="">
+              First Name:
+            </label>
+            <input type="text" class="form-control " [formControl] = "editProfileForm.controls.name" name ="name" size='38%' placeholder="First Name" [(ngModel)]="user.name"   >
+            <span class = "validate" *ngIf ="!editProfileForm.controls.surname.valid">
+                required.
+                </span>
+            <label for="">
+              Surname:
+            </label>
+                  <input type="text" class="form-control " [formControl] = "editProfileForm.controls.surname" name ="surname" size='38%' placeholder="Last Name" [(ngModel)]="user.surname"  >
+           
+                  <span class = "validate" *ngIf ="!editProfileForm.controls.email.valid">
+                      required.
+                      </span>
+                  <label for="">
+                   Email:
+                  </label>   
+              <input type="text" class="form-control " [formControl] = "editProfileForm.controls.email" name = "email" size='38%' placeholder="Email" [(ngModel)]="user.email"  >
+              <span class = "validate" *ngIf ="!editProfileForm.controls.phonenumber.valid">
+                  required.
+                  </span>
+              <label for="">
+                Phone number:
+              </label>
+              <input type="text" class="form-control " [formControl] = "editProfileForm.controls.phonenumber" name = "phonenumber" size='38%' placeholder="Phone Number" [(ngModel)]="user.phoneNo" >
+              <span class = "validate" *ngIf ="!editProfileForm.controls.psword.valid">
+                  required.
+                  </span>
+              <label for="">
+                  Password:
+                </label>
+              <input type="password" class="form-control " [formControl] = "editProfileForm.controls.psword" name = "psword" size='38%' placeholder="Password" [(ngModel)]="user.password" >
+              <br>
+              <span  >
+                  <button class="btn btn-default btn-block bookingButtons4" data-dismiss="modal" type="submit" [disabled] = "!editProfileForm.valid" (click) ="editProfile(user.name,user.surname,user.email,user.phoneNo,user.password)">
+                      Update Profile <span class="glyphicon glyphicon-cloud-upload"></span></button>
+                    
+               </span>
+              </form>
+              <hr>
+              <div class="row padContent">
+                <div class="col-lg-2">
+                  <label for="">
+                    Change Password
+                  </label>
+                 <label class="switch btn-sm" >
+                    <input type="checkbox" name ="isActive" [(ngModel)]="isActive" >
+                     <span class="slider round"></span>
+                  </label>
+                  
+                </div>
+              </div>
+              
+              <br>
+            
+              <div *ngIf = "isActive == true">
+                <form [formGroup] = "changePasswordForm">
+                  <label for="">
+                      Current Password:
+                    </label>
+                    <input type="password" class="form-control" name = "currentpword" placeholder="Current Password" size='38%' [(ngModel)]="currentpword" [formControl] = "changePasswordForm.controls.currentpword">
+                    <span class = "validate" *ngIf ="!changePasswordForm.controls.newpword.valid">
+                        required.
+                        </span>
+                <label for="">
+                  New Password:
+                </label>
+                <input type="password" class="form-control" name = "newpword" placeholder="New Password" size='38%' [(ngModel)]="newpword" [formControl] = "changePasswordForm.controls.newpword">
+                <span class = "validate" *ngIf ="!changePasswordForm.controls.confpword.valid">
+                    required.
+                    </span>
+                <label for="">
+                    Confirm Password:
+                  </label>
+                  <input type="password" class="form-control" name = "confpword" placeholder="Confirm Password" size='38%' [(ngModel)]="confpword" [formControl] = "changePasswordForm.controls.confpword">
+                  <br>
+                  <div class="padContent2">
+                     <div class="row ">
+                         
+                         <div class="col-lg-12">
+                            <span *ngIf = "isActive == true">
+                                <button class="btn btn-default btn-block bookingButtons4" [disabled] = "!changePasswordForm.valid" data-dismiss="modal" type="submit" (click) ="changePassword(currentpword,newpword,confpword)">
+                                    Change Password</button>
+                             
+                             </span>
+                          </div>
+                       </div>
+                  </div>
+                </form>
+              </div>
+               
+               
+               
+               
+                
+          
+          </div>
+
+ <div class="tab-pane fade" id="PaymentMethod" role="tabpanel" aria-labelledby="PaymentMethod-tab">
+    <app-user-payment-method></app-user-payment-method>
+  </div>
+  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+    <app-user-contact-details></app-user-contact-details>
+    </div>
+ </div>
+ </div>
+
+<app-footer></app-footer>

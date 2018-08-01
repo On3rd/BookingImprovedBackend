@@ -1,0 +1,196 @@
+<nav class="navbar navbar-default" id="indexNavBar">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand navbar-link bookingButtons"  (click) ="home()"  id="bookingBrand"> <img src="assets/img/Booking.com.png" alt="Booking.com" width="70%" id="brandImage"></a>
+            <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1" id="toggleMenu"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+        </div>
+  
+  
+  
+        <div class="collapse navbar-collapse" id="navcol-1">
+            
+    
+        <ul class="nav navbar-nav navbar-right " id="navItems" >
+     <form class="form-inline">
+      <div class="row">
+      <div class="col-lg-offset-0 col-md-offset-0 col-sm-offset-0  col-xs-offset-1 ">
+  
+  
+  <!--Manage Property Button here-->
+    <span>
+        
+              <app-manage-property></app-manage-property>
+            
+            </span>
+  
+  
+    <!--List Property Button-->
+    <span *ngIf="1==1">
+  
+        <app-listpropertybutton></app-listpropertybutton>
+  
+     </span>
+  
+    <!--Sign In Button-->
+    <span *ngIf="1==0" >
+      <app-signinform></app-signinform>
+     
+    </span>
+    <!--Sign Up Button-->
+        <span *ngIf="1==0">
+        <app-signupform></app-signupform>
+      
+        </span>
+    
+  
+    <!--Logged In Button-->
+        <span *ngIf="1==1">
+          
+                <div class="form-group">
+         
+    
+                        <li class="dropdown">
+                       <a class="nav-link dropdown-toggle transButton2 bookingButtons3 btn btn-primary navbar-btn"  type="button" id="dropdownMenuButton" href="#" id="dropdownThemes" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <div align ="left" ><img   class="profile-img2" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
+                                 alt=""> <span>{{username}}</span> </div></a>
+                       <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
+                        
+                        <div class="dropdown-content">
+                       <a class="dropdown-item" (click) = " ManageBooking()">Manage Bookings <span class="glyphicon glyphicon-calendar"></span></a>
+                       <br>
+                      <a class="dropdown-item" (click) = "viewProfile()">View Profile <span class="glyphicon glyphicon-folder-open"></span></a>
+                      <br>
+                      <a class="dropdown-item" (click) = "EditProfile()">Edit Profile <i class="fa fa-pencil-square-o"></i></a>
+                      <br>
+                      
+                       <div class="dropdown-divider">
+                         
+                        </div>
+                        <hr>
+                       <a class="dropdown-item" (click) = "logout()">Sign Out <i class="fa fa-sign-out"></i></a>
+                       </div>
+                      </div>
+                    
+                       </li>
+                      </div>
+        </span>
+  
+      </div>
+     </div>
+     
+     </form>
+    
+   
+    </ul>
+        </div>
+  
+  <div class ="col-lg-12 col-xs-12 ">
+  
+      <ul class ="navList list-inline">
+    
+                         <li><a class="btn tn-primary buttonlink active"> Accommodation</a> </li>
+                        
+                        <li><a class="btn tn-primary buttonlink" href ="https://booking.kayak.com/?sid=ce5984b8c33012f919bc10ec7552f201"> Flights</a> </li>
+                      <li><a class="btn tn-primary buttonlink" href ="http://www.rentalcars.com/Home.do?affiliateCode=booking-com&adplat=footer&preflang=en"> Rent A Car</a> </li>
+                        
+                        <li><a class="btn tn-primary buttonlink" href ="https://booking.rideways.com/?utm_source=booking.com&utm_medium=intra&lang=en-gb&currency=ZAR&sid=ce5984b8c33012f919bc10ec7552f201&utm_campaign=cross_product_bar_2&token=DkSw8pjaQEVKjr-s7bgmbGa-6owBCYEu9utvYK1aai0xNTI1NzAxOTMx"> Rent A Airport Taxi</a> </li>
+                       <li>{{login}}
+                           </li>
+                    </ul>
+  
+  </div>
+  
+    </div>
+  </nav>
+  <br>
+  <div class="container ">
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" >
+          <a class="nav-link active" id="homeScreen-tab" data-toggle="tab" href="#homeScreen" role="tab" aria-controls="homeScreen" aria-selected="true">Home Screen</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" id="viewProperties-tab" data-toggle="tab" href="#viewProperties" role="tab" aria-controls="viewProperties" aria-selected="false">View Properties</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" id="viewUsers-tab" data-toggle="tab" href="#viewUsers" role="tab" aria-controls="viewUsers" aria-selected="false">View Users</a>
+        </li>
+        <li class="nav-item">
+                <a class="nav-link disabled" id="viewReservations-tab" data-toggle="tab" href="#viewReservations" role="tab" aria-controls="viewReservations" aria-selected="false">View Reservations</a>
+              </li>
+        </ul>
+    </div>
+
+      <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade" id="homeScreen" role="tabpanel" aria-labelledby="homeScreen-tab">
+              <div class="container ">
+        <div class="row padContent2">
+            <div class="col-lg-12 col-lg-offset-0 col-md-12 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0">
+                <h3>Welcome, <span id="user"> {{username}}</span></h3>
+                <p>Adjust/Edit your home page.</p>
+                <div class="container">
+                <div class="row ">
+                    
+                        <form class="formDisplay padContent2">
+                                <div class = "padContent2">
+                            
+                          
+                <div class="row">
+                                <div class="col-lg-3 col-md-3"><span>Display Image</span>
+              
+                                    <input type="file" name="uploadImage" [(ngModel)] = "dispProperty.image" >
+                  
+                                </div>
+                
+                
+                </div>
+              <br>
+              <div class="row">
+                <div class="col-lg-6 col-md-6"><span>Country </span>
+                    <input class="form-control" type="text" name="txt_Country" [(ngModel)] = "dispProperty.country" required="" placeholder="e.g South Africa">
+                </div>
+            </div>
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6"><span>Province </span>
+                                    <input class="form-control" type="text" name="txt_Province" [(ngModel)] = "dispProperty.province" required="" placeholder="e.g Gauteng">
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6"><span>City </span>
+                                    <input class="form-control" type="text" name="txt_City" [(ngModel)] = "dispProperty.city" required="" placeholder="e.g Pretoria">
+                                </div>
+                            </div>
+              <br>
+              </div>
+                        </form>
+            
+            <br>
+                        <div class="row padContent">
+                            <div class="col-lg-3 col-md-3 ">
+                                <button class="btn btn-default btn-block bookingButtons4" type="submit" (click) = "processForm(dispProperty.city,
+                                dispProperty.country,
+                                dispProperty.image,
+                                dispProperty.province
+                               )">Add Property <span class="glyphicon glyphicon-cloud-upload"></span></button>
+                            </div>
+                        </div>
+                    
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+       
+            </div>
+
+            <div class="tab-pane fade" id="viewProperties" role="tabpanel" aria-labelledby="viewProperties-tab">
+                    <app-admin-view-properties></app-admin-view-properties>
+            </div>
+
+            <div class="tab-pane fade" id="viewUsers" role="tabpanel" aria-labelledby="viewUsers-tab">
+                    <app-admin-view-users></app-admin-view-users>
+            </div>
+            <div class="tab-pane fade" id="viewReservations" role="tabpanel" aria-labelledby="viewReservations-tab">
+                    <app-admin-view-reservations></app-admin-view-reservations>
+            </div>
+</div>
+<app-footer></app-footer>

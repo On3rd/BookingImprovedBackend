@@ -1,0 +1,200 @@
+<nav class="navbar navbar-default" id="indexNavBar">
+  <div class="container">
+      <div class="navbar-header">
+          <a class="navbar-brand navbar-link bookingButtons" (click) = "home()" id="bookingBrand"> <img src="assets/img/Booking.com.png" alt="Booking.com" width="70%" id="brandImage"></a>
+          <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1" id="toggleMenu"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+      </div>
+
+
+
+      <div class="collapse navbar-collapse" id="navcol-1">
+          
+  
+      <ul class="nav navbar-nav navbar-right " id="navItems" >
+   <form class="form-inline">
+    <div class="row">
+    <div class="col-lg-offset-0 col-md-offset-0 col-sm-offset-0  col-xs-offset-1 ">
+
+<!--Manage Mode Property Button here-->
+<span>
+    <app-manager-mode></app-manager-mode>
+       </span>
+<!--Manage Property Button here-->
+  <span *ngIf="1==1">
+      
+            <app-manage-property></app-manage-property>
+          
+          </span>
+
+
+  <!--List Property Button-->
+  <span *ngIf="1==1">
+
+      <app-listpropertybutton></app-listpropertybutton>
+
+   </span>
+
+  <!--Sign In Button-->
+  <span *ngIf="1==0" >
+    <app-signinform></app-signinform>
+   
+  </span>
+  <!--Sign Up Button-->
+      <span *ngIf="1==0">
+      <app-signupform></app-signupform>
+    
+      </span>
+  
+
+  <!--Logged In Button-->
+      <span *ngIf="1==1">
+        
+          <div class="form-group">
+         
+    
+              <li class="dropdown">
+             <a class="nav-link dropdown-toggle transButton2 bookingButtons3 btn btn-primary navbar-btn"  type="button" id="dropdownMenuButton" href="#" id="dropdownThemes" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <div align ="left" ><img   class="profile-img2" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
+                       alt=""> <span>{{username}}</span> </div></a>
+             <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
+              
+              <div class="dropdown-content">
+             
+            <a class="dropdown-item" (click) = "viewProfile()">View Profile <span class="glyphicon glyphicon-folder-open"></span></a>
+            <br>
+            <a class="dropdown-item" (click) = "EditProfile()">Edit Profile <i class="fa fa-pencil-square-o"></i></a>
+            <br>
+            
+             <div class="dropdown-divider">
+               
+              </div>
+              <hr>
+             <a class="dropdown-item" (click) = "logout()">Sign Out <i class="fa fa-sign-out"></i></a>
+             </div>
+            </div>
+          
+             </li>
+            </div>
+      </span>
+
+    </div>
+   </div>
+   
+   </form>
+  
+ 
+  </ul>
+      </div>
+
+<div class ="col-lg-12 col-xs-12 ">
+
+    <ul class ="navList list-inline">
+  
+                       <li><a class="btn tn-primary buttonlink" (click)="accomodation()"> Accommodation</a> </li>
+                      
+                      <li><a class="btn tn-primary buttonlink" href ="https://booking.kayak.com/?sid=ce5984b8c33012f919bc10ec7552f201"> Flights</a> </li>
+                    <li><a class="btn tn-primary buttonlink" href ="http://www.rentalcars.com/Home.do?affiliateCode=booking-com&adplat=footer&preflang=en"> Rent A Car</a> </li>
+                      
+                      <li><a class="btn tn-primary buttonlink" href ="https://booking.rideways.com/?utm_source=booking.com&utm_medium=intra&lang=en-gb&currency=ZAR&sid=ce5984b8c33012f919bc10ec7552f201&utm_campaign=cross_product_bar_2&token=DkSw8pjaQEVKjr-s7bgmbGa-6owBCYEu9utvYK1aai0xNTI1NzAxOTMx"> Rent A Airport Taxi</a> </li>
+                     <li>{{login}}
+                         </li>
+                  </ul>
+
+</div>
+
+  </div>
+</nav>
+
+<div class ="container">
+
+
+<div  class="col-lg-10 col-lg-offset-0 col-md-7 col-md-offset-0 col-sm-11 col-sm-offset-0 col-xs-12 col-xs-offset-0 ">
+          
+        <div class="container " >
+            <div class="col-lg-12 col-lg-offset-0 col-md-12 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 ">
+                <h1>Welcome, <span id="user"> {{username}} </span></h1>
+                <p>View and manage your bookings below.</p>
+            
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link active" id="home-tab" data-toggle="tab" href="#Accommodation" role="tab" aria-controls="Accommodation" aria-selected="true">Accommodation ({{ getAccBookings()}})</a>
+                </li>
+                <li class="nav-item hidden">
+                  <a class="nav-link disabled" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Flight Booking</a>
+                </li>
+                <li class="nav-item hidden">
+                  <a class="nav-link disabled" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Car Rental</a>
+                </li>
+              </ul>
+              <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade" id="Accommodation" role="tabpanel" aria-labelledby="home-tab">
+                    <div *ngFor="let accBookings of accBooking">
+                  <div class="row padContent2 "  id ="dispDiv" >
+                    
+                    
+    
+                        <div class="col-lg-3 col-lg-offset-0 col-md-2 col-sm-2 col-xs-10 col-xs-offset-1">
+                            <a (click)= "viewProperty(accBookings.property.prop_name)"><div class ="padContent" *ngIf = "accBookings.property.prop_type == 'Apartment'"><img height = "215px" width = "250px" src="assets/img/Odyssey Lifestyle Opens in new window/1.jpg"></div>
+                                <div class ="padContent5" *ngIf = "accBookings.property.prop_type == 'Holiday Home'"><img height = "215px" width = "250px"src="assets/img/iMphithi Holiday Home/1.jpg"></div>
+
+                                <div class ="padContent5" *ngIf = "accBookings.property.prop_type == 'Lodge'"><img height = "215px" width = "250px"src="assets/img/Fugitives Drift Lodge/4.jpg"></div>
+
+                                <div class ="padContent5" *ngIf = "accBookings.property.prop_type == 'Hotel'"><img height = "215px" width = "250px"src="assets/img/Dash Luxury Apartments/1.jpg"></div>
+                              
+                              
+                              
+                              
+                              
+                              </a> </div>
+                        <div class="col-lg-5 col-lg-offset-0 col-md-5 col-md-offset-0 col-sm-5 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+                            <a (click)= "viewProperty(accBookings.property.prop_name)"><h4>{{accBookings.property.prop_name| titlecase}}</h4></a>
+                            <span><label>Property Type:</label> {{accBookings.property.prop_type | titlecase}}</span><br>
+                            <span><label>Rooms:</label> {{accBookings.property.numberRoom }} </span><br>
+                            
+                            <span><label>Address:</label> {{accBookings.property.streetAddress | titlecase}}, {{accBookings.property.addressline2 | titlecase}}, {{accBookings.property.postal_code}}</span><br>
+                            <span><label>City:</label> {{accBookings.property.city | titlecase}}</span><br>
+                            <span><label>Province:</label> {{accBookings.property.province | titlecase}}</span><br>
+                            <span><label>Country:</label> {{accBookings.property.country | titlecase}} </span><br>
+                            
+                           
+                            
+      
+                        </div>
+                        <div class="col-lg-4 col-lg-offset-0 col-md-5 col-md-offset-0 col-sm-5 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+                           <br>
+                          <span><span class="glyphicon glyphicon-calendar"> </span><label>Check In:</label> {{accBookings.checkInDate}}</span>
+                          <br>
+                          <span><span class="glyphicon glyphicon-calendar"> </span><label>Check Out:</label> {{accBookings.checkOutDate}} </span>
+                          <br>
+                            <span><label>Visitors:</label> {{accBookings.noOfVisitors}} </span> 
+                            <br> 
+                            <span><label>Duration:</label> <span *ngIf = "accBookings.nights > 1"> {{accBookings.nights}} nights</span> <span *ngIf = "accBookings.nights < 1"> {{accBookings.nights}} night</span> </span>
+                            <br>  <span><label>Price:</label> ZAR {{accBookings.price | number}} p/n </span>
+                            
+                                  <!--<button class="btn btn-default  bookingButtons2 " type="button" id="EditBooking" (click)="EditBooking(accBookings.prop_name)">Edit</button>
+                                  -->
+                              <p class = "text-right padContent4">
+
+                                  <button class="btn btn-default  bookingButtons5 " type="button" id="CancelBooking" (click)="CancelBooking(accBookings)"> Cancel <i class="fa fa-trash"> </i></button>
+                              </p>  
+                          </div>
+                        
+                          
+                          
+                          </div>
+                          <br>
+                </div> 
+                </div>
+                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    <p>No flights</p>
+                </div>
+            
+                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                    <p>No Car Rental</p> 
+                  </div>
+               </div>
+</div>
+    
+      </div>
+  </div>
+</div>
+  <app-footer></app-footer>

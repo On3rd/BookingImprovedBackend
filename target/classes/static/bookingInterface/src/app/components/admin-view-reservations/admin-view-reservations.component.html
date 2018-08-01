@@ -1,0 +1,62 @@
+<div class="container">
+    <br>
+    <div class = "row padContent" id ="header">
+        <div class ="col-lg-2"> 
+            Guest
+          </div>
+      <div class ="col-lg-2"> 
+          Host
+        </div>
+        <div class ="col-lg-2">
+            Place 
+          </div>
+          <div class ="col-lg-2">
+              Duration
+            </div>
+            <div class ="col-lg-2"> 
+                Check In/Check Out
+              </div>
+              
+                <div class ="col-lg-2">
+                    Price
+                  </div>
+  
+      
+    </div>
+  
+    <div class = "row padContent" *ngFor ="let bookings of accBookings">
+        <div class ="col-lg-2 header"> 
+          <div *ngFor = "let users of user">
+              <div *ngIf = "bookings.user_id == users.user_Id">
+                <a (click) ="viewUser(users.user_Id)">{{users.name}} {{users.surname}}</a>
+              </div>
+          </div>
+          </div>
+          <div class ="col-lg-2 header">
+              <div *ngFor = "let property of properties">
+                  <div *ngIf = "bookings.prop_Id == property.prop_Id">
+                      <div *ngFor = "let users of user">
+                          <div *ngIf ="property.user_Id == users.user_Id">
+                            <a (click) ="viewUser(users.user_Id)">{{users.name}} {{users.surname}}</a>
+                          </div>
+                      </div>
+               </div>
+               </div>    
+            </div>
+            <div class ="col-lg-2 header">
+                <a (click) ="viewProperty(bookings.prop_Id)"> {{bookings.prop_name}}</a>
+              </div>
+              <div class ="col-lg-2 header"> 
+                  <span *ngIf = "bookings.nights > 1">{{bookings.nights}} Nights</span>
+                  <span *ngIf = "bookings.nights < 1">{{bookings.nights}} Night</span>
+                </div>
+                <div class ="col-lg-2 header"> 
+                    {{bookings.checkInDate}}/{{bookings.checkOutDate}}
+                  </div>
+                  <div class ="col-lg-2 header">
+                      ZAR {{bookings.price | number}}
+                    </div>
+                  
+    </div>
+  
+  </div>

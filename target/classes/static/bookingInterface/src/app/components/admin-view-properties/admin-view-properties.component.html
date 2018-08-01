@@ -1,0 +1,58 @@
+<div class="container">
+  <br>
+ 
+  <div class = "row padContent" id ="header">
+    <div class ="col-lg-2"> 
+        Property Name
+      </div>
+      <div class ="col-lg-2">
+          Property Type 
+        </div>
+        <div class ="col-lg-2">
+            City 
+          </div>
+          <div class ="col-lg-2"> 
+              Province
+            </div>
+            <div class ="col-lg-2"> 
+                Country
+              </div>
+              <div class ="col-lg-2">
+                  Manager 
+                </div>
+
+    
+  </div>
+
+  <div class = "row padContent" *ngFor ="let properties of property">
+      <div class ="col-lg-2 header"> 
+         <a (click) ="viewProperty(properties.prop_Id)"> {{properties.prop_name}} </a>
+        </div>
+        <div class ="col-lg-2 header">
+            {{properties.prop_type}} 
+          </div>
+          <div class ="col-lg-2 header">
+              {{properties.city}}
+            </div>
+            <div class ="col-lg-2 header"> 
+                {{properties.province}}
+              </div>
+              <div class ="col-lg-2 header"> 
+                 {{properties.country}}
+                </div>
+                <div class ="col-lg-2 header" *ngFor = "let users of user">
+                  <div *ngIf = "users.user_Id == properties.user_Id">
+                      <a (click) ="viewManager(users.user_Id)"><div *ngIf ="users.user_Id == userID">
+                        You
+                      </div>
+                      <div *ngIf ="users.user_Id != userID">
+                          {{users.name}} {{users.surname}} 
+                      </div>
+                    </a>
+                  </div>
+                   
+                  </div>
+                  
+  </div>
+
+</div>

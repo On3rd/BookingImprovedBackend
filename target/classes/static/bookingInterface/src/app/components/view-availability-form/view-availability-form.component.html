@@ -1,0 +1,16 @@
+
+<div class ="row">
+    <br>
+    
+<div *ngFor="let timesheet of timeSheets; let i = index">
+    
+     <div class="col-lg-4 col-lg-offset-1">
+    
+          <p align = "center" class ="btn btn-sm btn-block bookingButtons5" >{{timesheet.availableDates | date : "fullDate"}}</p>
+      
+       
+    </div>
+    
+   </div>
+  </div>
+
